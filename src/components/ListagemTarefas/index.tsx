@@ -53,10 +53,11 @@ export function ListagemTarefas({ abrirModal }: PropsListarTarefas) {
                     }
 
                 </ul>
+                </Container>
 
                    
 
-
+                <Container>
                 <ul>
                     <h3>Quadro 2</h3>
         
@@ -96,9 +97,10 @@ export function ListagemTarefas({ abrirModal }: PropsListarTarefas) {
                     }
 
                 </ul>
+                </Container>
 
                 
-
+                 <Container>
                 <ul>
                     <h3>Quadro 3</h3>
                     {
