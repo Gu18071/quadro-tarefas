@@ -1,10 +1,10 @@
 # Projeto alunos 5º Periodo Sistemas UniAlfa
 
-Para instalar as dependências do projeto execute o comando:
+## COMO INICIAR O PROJETO?
 
-### `npm install`
+```
 
-Para iniciar o projeto execute o comando:
-
-### `npm start`
+1. npm install
+2. npm start
+```
 

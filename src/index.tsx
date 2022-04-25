@@ -29,13 +29,12 @@ createServer({
 
         this.delete('/api/tarefas', (schema, request) => {
             const data = JSON.parse(request.requestBody);
-            console.log(data);
+
+            schema.db.tarefas.remove(data.id);
+            return data;
             
-             schema.db.tarefas.remove(data.id);
-             return data;
-            
-            
-        });
+        })
+
     }
 })
 

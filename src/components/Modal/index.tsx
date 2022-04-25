@@ -21,8 +21,8 @@ export function NovoModal(props: NovoModalProps) {
 
     const [titulo, setTitulo] = useState("");
     const [descricao, setDescricao] = useState("");
-    const [position, setPosition] = useState("");
     const [show, setShow] = useState<boolean>(false);
+    const [position, setPosition] = useState("");
 
     useEffect(() => {
         if (editarTarefa.editar) {
@@ -38,6 +38,7 @@ export function NovoModal(props: NovoModalProps) {
         setTitulo('')
         setDescricao('')
         valoresPadraoEditarTarefa();
+        
         props.fecharModal();
     }
 
@@ -50,6 +51,7 @@ export function NovoModal(props: NovoModalProps) {
                 ...editarTarefa.tarefa,
                 titulo,
                 descricao
+            
             }
             console.log("caiu submit excluir");
             deleteTarefas(obj);
@@ -71,7 +73,8 @@ export function NovoModal(props: NovoModalProps) {
             let obj: any = {
                 ...editarTarefa.tarefa,
                 titulo,
-                descricao
+                descricao,
+                position
             }
             console.log("editar");
 
@@ -85,7 +88,7 @@ export function NovoModal(props: NovoModalProps) {
         } else {
             criarTarefas({
                 titulo,
-                descricao,
+                descricao, 
                 position
             })
         }
@@ -101,7 +104,7 @@ export function NovoModal(props: NovoModalProps) {
             buttonExcluir();
         }}
     >
-        excluir
+        Excluir
     </button>
 
 
@@ -126,17 +129,19 @@ export function NovoModal(props: NovoModalProps) {
             <FormContainer onSubmit={onSubmitModal} >
                 <h2>Cadastrar Tarefa</h2>
 
-                <select  name="select" className="selectoptn" onChange={(event) => setPosition(event.target.value)}>
-                    <option selected disabled >Escolha um quadro</option>
-                    <option value="1"  >1</option>
-                    <option value="2" >2</option>
-                    <option value="3" >3</option>
-                </select>
+                <select className='selecao' name='select' onChange={(event) => setPosition(event.target.value)}>
+                    <option selected disabled>Escolha um quadro: </option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+
+                    </select>
 
                 <input
                     placeholder='Titulo'
                     value={titulo}
                     onChange={(event) => setTitulo(event.target.value)}
+                    
                 />
 
                 <textarea
@@ -157,7 +162,7 @@ export function NovoModal(props: NovoModalProps) {
                             buttonExcluir();
                         }}
                     >
-                        excluir
+                        Excluir
                     </button>
 
                     : null
